@@ -25,7 +25,7 @@ mongoose
   .connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB Connected');
-    return server.listen({ port: PORT });
+    return server.listen({ port: port });
   })
   .then((res) => {
     console.log(`Server running at ${res.url}`);
@@ -50,3 +50,5 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+//app.listen(port, () => console.log(`Server started on PORT ${port}`));
