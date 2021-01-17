@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Grid, Transition, Button } from 'semantic-ui-react';
 
@@ -18,18 +18,17 @@ function Home() {
 
 
   return (
-  <>
+
     <Grid columns={1}>
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
       </Grid.Row>
       <Grid.Row>
         {user && (
-          <Grid.Column style={ { marginBottom: 20 } }>
+          <div style={ { marginBottom: 20, width: "100%" } }>
             <PostForm />
-          </Grid.Column>
-            
-          ) }
+          </div>
+        ) }
         </Grid.Row>
 
         {loading ? (
@@ -39,7 +38,7 @@ function Home() {
             <Transition.Group >
                 <Grid.Row>
             {posts &&
-                <ShowMore items={ posts }  > 
+                <ShowMore items={ posts } by={3}> 
                
              
                 { ( { current, onMore } ) => (
@@ -55,7 +54,7 @@ function Home() {
            
                     ) ) }
 
-                    <Button className="load-more" color="pink"
+                    <Button className="load-more" style={{backgroundColor: "#393e46", color:"white"}}
                     disabled={!onMore}
                     onClick={() => {
                     if (!!onMore) onMore();
@@ -77,11 +76,10 @@ function Home() {
        
           </Transition.Group>
             
-        )}
-    
+          ) }
+          
     </Grid>
-     
-</>
+
   );
 }
 

@@ -1,25 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 body {
   margin: 0;
-  background: url("./assets/background.svg");
- 
-}
-
+  font-family: 'Comfortaa',cursive;
+ }
 
 .page-title {
   display: block !important;
   text-align: center;
   font-size: 2rem;
-  margin-top: 10px;
+  margin-top: 1.5rem;
 }
 
 .form-container {
   width: 400px;
   margin: auto;
-}
-
-.ui.green.button:focus,
-.ui.green.buttons .button:focus {
-  background-color: green;
 }
 
 .avatar {
@@ -38,16 +33,22 @@ body {
   display: inline-block;
 }
 
+.load-more {
+  margin: 2rem auto !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+}
 
 .container{
 
-  background-color: whitesmoke;
+  background-color: #ffd369;
   height: 100vh;
-  overflow-y: auto;
-
+  width: 100% !important;
   padding: 4rem 2rem !important;
+  overflow: auto;
 }
-
 
 .confirm-popup{
  color: black!important;
@@ -57,19 +58,24 @@ body {
 .quill-editor{
    text-align: center;
    padding: 1.5rem !important;
+   
  }
-
 
 .home-post-page{
   
-  height: 150px;
+  height: 180px;
   overflow: auto;
 
   margin: 20px auto;
   padding: 20px;
    
-  background-color: lavenderblush;
+  background-color:#eeeeee;
 
+}
+
+.card-content {
+   background-color:#eeeeee !important;
+  
 }
 
 .single-post-page {
@@ -77,19 +83,30 @@ body {
 }
 
 .content-post{
-  padding: 5px;
-
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .menu {
   margin-bottom: 0 !important;
-
+ 
 }
 
-.load-more{
-   margin: 2rem auto !important;
-   display: flex !important;
-   justify-content: center;
-   align-items: center;
-
+.footer{
+  background-color:#222831;
+  color: white;
+  text-align: center;
+  font-size: small;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
+.extra{
+  background-color: #eeeeee !important;
+ 
+}
+
+

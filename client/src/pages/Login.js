@@ -57,7 +57,7 @@ function Login(props) {
           error={errors.password ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" color="green">
+        <Button type="submit" style={{backgroundColor: "#393e46", color:"white"}}>
           Login
         </Button>
       </Form>

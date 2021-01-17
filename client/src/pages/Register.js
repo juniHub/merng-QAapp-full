@@ -77,7 +77,7 @@ function Register(props) {
           error={errors.confirmPassword ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" color="green">
+        <Button type="submit" style={{backgroundColor: "#393e46", color:"white"}}>
           Register
         </Button>
       </Form>

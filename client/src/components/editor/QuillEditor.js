@@ -12,6 +12,7 @@ class QuillEditor extends React.Component
  toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
      [ 'blockquote', 'code-block' ],
+      [{ 'font': [] }],
    [{ 'header': 1 }, { 'header': 2 }],       
 
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],

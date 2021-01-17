@@ -39,7 +39,7 @@ function PostForm ()
   }
 
   return (
-    <Segment inverted color="pink" className="quill-editor">
+    <Segment inverted className="quill-editor">
       <Form inverted>
         <Form.Field>
           <QuillEditor

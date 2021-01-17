@@ -20,12 +20,18 @@ import MyPopup from '../util/MyPopup';
 import Avatar from 'react-avatar';
 import parse from 'html-react-parser';
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+
 function SinglePost(props) {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
   const commentInputRef = useRef(null);
 
-  const [comment, setComment] = useState('');
+  const [ comment, setComment ] = useState( '' );
+  const seed = getRandomInt( 100 );
 
   const {
     data: { getPost }
@@ -68,13 +74,13 @@ function SinglePost(props) {
     postMarkup = (
       <Grid>
         <Grid.Row>
-          <Grid.Column width={2} as={Link} to="/">
-           <Avatar className="avatar-large" size={ "3rem" } name={username }  />
+          <Grid.Column width={4} as={Link} to="/">
+            <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
+
           </Grid.Column>
           <Grid.Column width={12}>
             <Card fluid>
-           
-              <Card.Content>
+              <Card.Content className="card-content">
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{ moment( createdAt ).fromNow() }</Card.Meta>
               
@@ -86,8 +92,8 @@ function SinglePost(props) {
                 </Card.Description>
            
               </Card.Content>
-              <hr />
-              <Card.Content extra>
+        
+              <Card.Content extra className="extra">
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comment on post">
                   <Button
@@ -95,7 +101,7 @@ function SinglePost(props) {
                     labelPosition="right"
                     onClick={() => console.log('Comment on post')}
                   >
-                    <Button basic color="green">
+                    <Button color="green">
                       <Icon name="comments" />
                     </Button>
                     <Label basic color="green" pointing="left">
