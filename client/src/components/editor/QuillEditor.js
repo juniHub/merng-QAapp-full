@@ -78,7 +78,7 @@ class QuillEditor extends React.Component
                     
                 />
 
-            <Button className="clear-button" color="yellow" onClick={this.handleClear}>
+            <Button className="clear-button" color="pink" onClick={this.handleClear}>
             Clear
           </Button>      
        

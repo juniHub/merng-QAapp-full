@@ -56,7 +56,12 @@ body {
 
 .quill-editor{
    text-align: center;
-   padding: 1.5rem !important;
+   margin: auto 2rem !important;
+   padding: 2rem !important;
+   background: #fef6e4 !important;
+   border: solid hotpink 2px !important;
+   height: 400px;
+   
    
  }
 

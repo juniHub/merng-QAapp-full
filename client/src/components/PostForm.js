@@ -39,8 +39,8 @@ function PostForm ()
   }
 
   return (
-    <Segment inverted className="quill-editor">
-      <Form inverted>
+    <Segment className="quill-editor">
+      <Form>
         <Form.Field>
           <QuillEditor
             placeholder="Hello World!"
@@ -52,7 +52,7 @@ function PostForm ()
           />
          
         
-          <Button className="submit-button" type="submit" color="green" onClick={onSubmit}>
+          <Button className="submit-button" type="submit" color="blue" onClick={onSubmit}>
             Submit
           </Button>
                    
