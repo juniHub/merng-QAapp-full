@@ -42,7 +42,7 @@ function PostCard({
             </div>
         </Card.Description>
          
-      <Button className="show-button" animated color='green' as={Link} to={`/posts/${id}`}>
+      <Button className="show-button" animated color='blue' as={Link} to={`/posts/${id}`}>
       <Button.Content visible>Show More</Button.Content>
       <Button.Content hidden>
         <Icon name='eye' />
@@ -53,10 +53,10 @@ function PostCard({
         <LikeButton user={user} post={{ id, likes, likeCount }} />
         <MyPopup content="Comment on post">
           <Button labelPosition="right" as={Link} to={`/posts/${id}`}>
-            <Button color="green">
+            <Button color="blue">
               <Icon name="comments" />
             </Button>
-            <Label basic color="green" pointing="left">
+            <Label basic color="blue" pointing="left">
               {commentCount}
             </Label>
           </Button>

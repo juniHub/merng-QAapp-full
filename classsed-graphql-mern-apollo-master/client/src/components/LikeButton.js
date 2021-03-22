@@ -21,16 +21,16 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
 
   const likeButton = user ? (
     liked ? (
-      <Button color="pink">
+      <Button color="teal">
         <Icon name="heart" />
       </Button>
     ) : (
-      <Button color="pink">
+      <Button color="teal" basic>
         <Icon name="heart" />
       </Button>
     )
   ) : (
-    <Button as={Link} to="/login" color="pink">
+    <Button as={Link} to="/login" color="teal" basic>
       <Icon name="heart" />
     </Button>
   );
@@ -38,7 +38,7 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
   return (
     <Button as="div" labelPosition="right" onClick={likePost}>
       <MyPopup content={liked ? 'Unlike' : 'Like'}>{likeButton}</MyPopup>
-      <Label basic color="pink" pointing="left">
+      <Label basic color="teal" pointing="left">
         {likeCount}
       </Label>
     </Button>

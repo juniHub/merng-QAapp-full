@@ -1,5 +1,4 @@
 import React, { useContext, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import moment from 'moment';
@@ -8,30 +7,22 @@ import {
   Card,
   Form,
   Grid,
+  Image,
   Icon,
-  Label,
-
+  Label
 } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
 import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import MyPopup from '../util/MyPopup';
-import Avatar from 'react-avatar';
-import parse from 'html-react-parser';
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 
 function SinglePost(props) {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
   const commentInputRef = useRef(null);
 
-  const [ comment, setComment ] = useState( '' );
-  const seed = getRandomInt( 100 );
+  const [comment, setComment] = useState('');
 
   const {
     data: { getPost }
@@ -72,28 +63,24 @@ function SinglePost(props) {
     } = getPost;
 
     postMarkup = (
-      <Grid className="single-post">
+      <Grid>
         <Grid.Row>
-          <Grid.Column width={4} as={Link} to="/">
-            <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
-
+          <Grid.Column width={2}>
+            <Image
+              src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+              size="small"
+              float="right"
+            />
           </Grid.Column>
-          <Grid.Column width={12}>
+          <Grid.Column width={10}>
             <Card fluid>
-              <Card.Content className="card-content">
+              <Card.Content>
                 <Card.Header>{username}</Card.Header>
-                <Card.Meta>{ moment( createdAt ).fromNow() }</Card.Meta>
-              
-                <Card.Description>
-                  <div className="single-post-page">
-                       { parse( body ) }
-                  </div>
-               
-                </Card.Description>
-           
+                <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
+                <Card.Description>{body}</Card.Description>
               </Card.Content>
-        
-              <Card.Content extra className="extra">
+              <hr />
+              <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comment on post">
                   <Button
@@ -101,7 +88,7 @@ function SinglePost(props) {
                     labelPosition="right"
                     onClick={() => console.log('Comment on post')}
                   >
-                    <Button color="blue">
+                    <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
                     <Label basic color="blue" pointing="left">
@@ -115,7 +102,7 @@ function SinglePost(props) {
               </Card.Content>
             </Card>
             {user && (
-              <Card fluid className="comment-form">
+              <Card fluid>
                 <Card.Content>
                   <p>Post a comment</p>
                   <Form>
@@ -130,7 +117,7 @@ function SinglePost(props) {
                       />
                       <button
                         type="submit"
-                        className="ui button blue"
+                        className="ui button teal"
                         disabled={comment.trim() === ''}
                         onClick={submitComment}
                       >
@@ -142,7 +129,7 @@ function SinglePost(props) {
               </Card>
             )}
             {comments.map((comment) => (
-              <Card fluid key={comment.id} className="comment-form">
+              <Card fluid key={comment.id}>
                 <Card.Content>
                   {user && user.username === comment.username && (
                     <DeleteButton postId={id} commentId={comment.id} />

@@ -18,7 +18,7 @@ function Home() {
 
 
   return (
-
+ <div className="ui container">
     <Grid columns={1}>
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
@@ -78,7 +78,8 @@ function Home() {
             
           ) }
           
-    </Grid>
+      </Grid>
+      </div>
 
   );
 }
