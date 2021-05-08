@@ -14,7 +14,7 @@ function MenuBar() {
   const handleItemClick = ( e, { name } ) => setActiveItem( name );
   
   const menuBar = user ? (
-    <Menu className="menu" pointing attached inverted size="massive" style={{backgroundColor: "#222831"}}>
+    <Menu menu tabular attached inverted size="massive" style={{backgroundColor: "#222831"}}>
       <Menu.Item name={`Welcome ${user.username}`} active as={Link} to="/" />
 
       <Menu.Menu position="right" className="white">

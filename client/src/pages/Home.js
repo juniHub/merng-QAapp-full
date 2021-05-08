@@ -1,6 +1,6 @@
 import React, { useContext} from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Grid, Transition, Button } from 'semantic-ui-react';
+import { Grid, Transition, Button, Header} from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
 import PostCard from '../components/PostCard';
@@ -19,24 +19,31 @@ function Home() {
 
   return (
  <div className="ui container">
-    <Grid columns={1}>
-      <Grid.Row className="page-title">
-        <h1>Recent Posts</h1>
-      </Grid.Row>
+  
+    <Header as='h1' className="page-title">Recent QAs</Header>
+      
       <Grid.Row>
+         <Grid columns={1}>
         {user && (
           <div style={ { marginBottom: 20, width: "100%" } }>
-            <PostForm />
+              <PostForm />
+              
           </div>
-        ) }
+          ) }
+          </Grid>
         </Grid.Row>
 
-        {loading ? (
-          <h1>Loading posts..</h1>
+        { loading ? (
+        <Grid.Row className="page-loading">
+           <Grid columns={1}>
+            <h1>Loading posts..</h1>
+          </Grid>
+        </Grid.Row>
         ) : (
            
-            <Transition.Group >
-                <Grid.Row>
+          <Transition.Group >
+           
+            <Grid columns={ 3 } stackable>
             {posts &&
                 <ShowMore items={ posts } by={3}> 
                
@@ -45,12 +52,14 @@ function Home() {
                   <div>
                    
                     {current.map( ( post ) => (
+                     
       
-                      <Grid.Column key={ post.id }>
+                        <Grid.Column key={ post.id }>
               
                         <PostCard post={ post } />
               
-                      </Grid.Column>
+                        </Grid.Column>
+                     
            
                     ) ) }
 
@@ -72,13 +81,13 @@ function Home() {
               </ShowMore>
                 }
 
-           </Grid.Row>     
+              </Grid>
+          
        
           </Transition.Group>
             
           ) }
-          
-      </Grid>
+    
       </div>
 
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button , Icon} from 'semantic-ui-react';
 
 import ReactQuill, { Quill } from 'react-quill';
 import "react-quill/dist/quill.snow.css";
@@ -10,26 +10,23 @@ Quill.register('modules/imageCompress', ImageCompress);
 class QuillEditor extends React.Component
 {
  toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-     [ 'blockquote', 'code-block' ],
-      [{ 'font': [] }],
-   [{ 'header': 1 }, { 'header': 2 }],       
-
+  ['bold', 'italic', 'underline', 'strike', 'link'],        // toggled buttons
+  ['blockquote', 'code-block'],
+  ['video', 'formula', 'image'],
+  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
   [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-     [ { 'direction': 'rtl' } ],
-    [{ 'size': ['small', false, 'large', 'huge'] }],                      // text direction
- 
+  [{ 'direction': 'rtl' }],                         // text direction
+
+  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
 
   [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+  [{ 'font': [] }],
+  [{ 'align': [] }],
 
-     [ { 'align': [] } ],
-    ['link', 'image', 'video'],
-
-     [ 'clean' ],
-                                        // remove formatting button
+  ['clean']                                         // remove formatting button
 ];
 
 
@@ -78,9 +75,12 @@ class QuillEditor extends React.Component
                     
                 />
 
-            <Button className="clear-button" color="pink" onClick={this.handleClear}>
-            Clear
-          </Button>      
+    <Button className="clear-button" animated color='black' onClick={this.handleClear}>
+      <Button.Content visible>Clear</Button.Content>
+      <Button.Content hidden>
+        <Icon name='eraser' />
+      </Button.Content>
+    </Button>    
        
         </>     
 

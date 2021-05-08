@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Segment } from 'semantic-ui-react';
+import { Button, Form, Segment, Icon } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -39,7 +39,7 @@ function PostForm ()
   }
 
   return (
-    <Segment className="quill-editor">
+    <Segment className="quill-editor fluid ui raised very padded">
       <Form>
         <Form.Field>
           <QuillEditor
@@ -52,9 +52,13 @@ function PostForm ()
           />
          
         
-          <Button className="submit-button" type="submit" color="blue" onClick={onSubmit}>
-            Submit
-          </Button>
+      <Button className="submit-button" animated color='pink' onClick={onSubmit}>
+      <Button.Content visible>Submit</Button.Content>
+      <Button.Content hidden>
+        <Icon name='paper plane' />
+      </Button.Content>
+    </Button>
+
                    
         </Form.Field>
       </Form>

@@ -5,7 +5,7 @@ function Footer() {
     return (
           
     <div className="footer">
-        <p>Make with <span role="img" aria-label="heart">💖</span>by juniHUB@2020</p>
+        <p>Made with <span role="img" aria-label="heart">💖</span>by juniHUB@2020</p>
     </div>
     )
 }

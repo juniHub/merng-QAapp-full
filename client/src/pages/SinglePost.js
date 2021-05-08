@@ -7,7 +7,6 @@ import {
   Button,
   Card,
   Form,
-  Grid,
   Icon,
   Label,
 
@@ -17,7 +16,7 @@ import { AuthContext } from '../context/auth';
 import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import MyPopup from '../util/MyPopup';
-import Avatar from 'react-avatar';
+
 import parse from 'html-react-parser';
 
 function getRandomInt(max) {
@@ -72,15 +71,18 @@ function SinglePost(props) {
     } = getPost;
 
     postMarkup = (
-      <Grid className="single-post">
-        <Grid.Row>
-          <Grid.Column width={4} as={Link} to="/">
-            <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
-
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <Card fluid>
+      <div className="single-post">
+        
+        <Button className="" animated color='teal' as={Link} to="/">
+          <Button.Content visible>Back Home</Button.Content>
+          <Button.Content hidden>
+          <Icon name='home' />
+          </Button.Content>
+        </Button>
+       
+            <Card className="fluid ui raised very padded">
               <Card.Content className="card-content">
+                <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{ moment( createdAt ).fromNow() }</Card.Meta>
               
@@ -95,16 +97,16 @@ function SinglePost(props) {
         
               <Card.Content extra className="extra">
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
-                <MyPopup content="Comment on post">
+                <MyPopup content="Reply on question">
                   <Button
                     as="div"
                     labelPosition="right"
                     onClick={() => console.log('Comment on post')}
                   >
-                    <Button color="blue">
+                    <Button color="teal">
                       <Icon name="comments" />
                     </Button>
-                    <Label basic color="blue" pointing="left">
+                    <Label basic color="teal" pointing="left">
                       {commentCount}
                     </Label>
                   </Button>
@@ -117,7 +119,7 @@ function SinglePost(props) {
             {user && (
               <Card fluid className="comment-form">
                 <Card.Content>
-                  <p>Post a comment</p>
+                  <p>Post Answer</p>
                   <Form>
                     <div className="ui action input fluid">
                       <input
@@ -130,7 +132,7 @@ function SinglePost(props) {
                       />
                       <button
                         type="submit"
-                        className="ui button blue"
+                        className="ui button teal"
                         disabled={comment.trim() === ''}
                         onClick={submitComment}
                       >
@@ -153,9 +155,8 @@ function SinglePost(props) {
                 </Card.Content>
               </Card>
             ))}
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+        
+      </div>
     );
   }
   return postMarkup;

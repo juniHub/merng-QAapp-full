@@ -7,11 +7,18 @@ body {
  }
 
 .page-title {
-  display: block !important;
+ 
   text-align: center;
   font-size: 2rem;
-  margin-top: 1.5rem;
+  margin: 3rem auto !important;
 }
+
+.page-loading{
+ text-align: center;
+ font-size: 2rem;
+ margin: 2rem auto;
+}
+
 
 .form-container {
   width: 400px;
@@ -26,17 +33,20 @@ body {
 
 .show-button{
   float: right;
+  z-index: 0 !important;
+}
+
+.clear-button {
+  margin: 2rem !important;
 }
 
 .submit-button {
 
-  margin-top: 4rem !important;
-  margin-bottom: 1rem !important;
   display: inline-block;
 }
 
 .load-more {
-  margin: 2rem auto !important;
+  margin: 2rem auto 6rem auto !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -58,37 +68,90 @@ body {
    text-align: center;
    margin: auto 2rem !important;
    padding: 2rem !important;
-   background: #fef6e4 !important;
-   border: solid hotpink 2px !important;
-   height: 400px;
+   min-height: 300px;
+   background: teal !important;
+  
+
+   
+ }
+
+ .ql-toolbar.ql-snow {
+   
+   border: 2px solid teal !important;
+   background: white;
    
    
  }
 
+ .ql-container.ql-snow {
+ 
+  border: 2px solid teal !important;
+  min-height: 300px;
+  overflow: auto;
+  background: white !important;
+  
+   
+ }
+
+
+ .ql-snow.ql-toolbar button:hover .ql-stroke,
+ .ql-snow .ql-toolbar button:hover .ql-stroke,
+ .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+ .ql-snow .ql-toolbar button.ql-active .ql-stroke,
+ .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+ .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+ .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+ .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+ .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+ .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+ .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+ .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+ .ql-snow.ql-toolbar button:hover .ql-stroke-mitter,
+ .ql-snow .ql-toolbar button:hover .ql-stroke-mitter,
+ .ql-snow.ql-toolbar button.ql-active .ql-stroke-mitter,
+ .ql-snow .ql-toolbar button.ql-active .ql-stroke-mitter,
+ .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-mitter,
+ .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-mitter,
+ .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-mitter,
+ .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-mitter,
+ .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-mitter,
+ .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-mitter,
+ .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-mitter,
+ .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-mitter {
+   stroke: teal !important;
+ }
+
+ 
 .home-post-page{
   
-  height: 180px;
+  height: 100px;
   overflow: auto;
 
   margin: 20px auto;
   padding: 20px;
    
-  background:#fef6e4;
-
+  background:white;
+  
 }
 
 .card-content {
-   background:#f582ae !important;
+  
+   border-left: solid 8px teal !important;
   
 }
 
 .single-post-page {
   overflow: auto;
+  min-height: 300px;
+  background: white;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .content-post{
   padding: 1rem;
   margin: 1rem;
+  
 }
 
 .menu {
@@ -109,15 +172,17 @@ body {
 }
 
 .extra{
-  background-color: #8bd3dd !important;
+  background-color: white!important;
+  border-left: solid 8px teal !important;
  
 }
 
 .single-post{
-  margin-top: 4rem !important;
+  margin: 4rem auto 6rem auto !important;
+  
 }
 
 .comment-form {
   background:#fef6e4 !important;
-  border: solid 1px hotpink!important;
+  border: solid 1px teal!important;
 }
