@@ -18,7 +18,7 @@ function getRandomInt(max) {
 
 
 function PostCard({
-  post: { body, createdAt, id, username, likeCount, commentCount, likes }
+  post: { tag, body, createdAt, id, username, likeCount, commentCount, likes }
 } )
 {
   const { user } = useContext( AuthContext );
@@ -36,9 +36,15 @@ function PostCard({
           {moment(createdAt).fromNow(true)}
           </Card.Meta>
         
-        <Card.Description>
+          <Card.Description>
+            <div class="ui raised segment">
+            <a href="#!" className="ui pink ribbon label">{ tag}</a>
             <div className="home-post-page">
-            { parse( body ) }
+             
+                { parse( body ) }
+             
+              </div>
+              
             </div>
         </Card.Description>
          

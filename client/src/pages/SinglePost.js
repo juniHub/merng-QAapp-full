@@ -62,6 +62,7 @@ function SinglePost(props) {
     const {
       id,
       body,
+      tag,
       createdAt,
       username,
       comments,
@@ -71,9 +72,9 @@ function SinglePost(props) {
     } = getPost;
 
     postMarkup = (
-      <div className="single-post">
+      <div className="content-post">
         
-        <Button className="" animated color='teal' as={Link} to="/">
+        <Button className="home-button" animated color='teal' as={Link} to="/">
           <Button.Content visible>Back Home</Button.Content>
           <Button.Content hidden>
           <Icon name='home' />
@@ -81,17 +82,22 @@ function SinglePost(props) {
         </Button>
        
             <Card className="fluid ui raised very padded">
-              <Card.Content className="card-content">
+            <Card.Content className="card-content">
                 <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{ moment( createdAt ).fromNow() }</Card.Meta>
               
-                <Card.Description>
-                  <div className="single-post-page">
-                       { parse( body ) }
-                  </div>
+            <Card.Description>
+              <div class="ui raised segment">
+              <a href="#!" className="ui pink ribbon label">{ tag}</a>
+                <div className="single-post-page">
+                { parse( body ) }
+    
+                </div>
+              </div>
                
-                </Card.Description>
+              </Card.Description>
+            
            
               </Card.Content>
         
@@ -119,7 +125,7 @@ function SinglePost(props) {
             {user && (
               <Card fluid className="comment-form">
                 <Card.Content>
-                  <p>Post Answer</p>
+                  <p>Post Answers</p>
                   <Form>
                     <div className="ui action input fluid">
                       <input
@@ -182,6 +188,7 @@ const FETCH_POST_QUERY = gql`
     getPost(postId: $postId) {
       id
       body
+      tag
       createdAt
       username
       likeCount

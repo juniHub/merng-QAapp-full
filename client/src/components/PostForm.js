@@ -3,18 +3,18 @@ import { Button, Form, Segment, Icon } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
-import { useForm } from '../util/postHook';
-//import { useForm } from '../util/hooks';
+//import { useForm } from '../util/postHook';
+import { useForm } from '../util/hooks';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 
-import QuillEditor from './editor/QuillEditor';
+//import QuillEditor from './editor/QuillEditor';
 
 
 function PostForm ()
 {
   
-  const { values, onChange, onSubmit, clear} = useForm(createPostCallback, {
-    body: "",
+  const { values, onChange, onSubmit} = useForm(createPostCallback, {
+    body: "", tag: ""
  
   } );
 
@@ -30,6 +30,7 @@ function PostForm ()
       data.getPosts = [result.data.createPost, ...data.getPosts];
       proxy.writeQuery({ query: FETCH_POSTS_QUERY, data });
       values.body = "";
+      values.tag = "";
     
     }
   });
@@ -40,19 +41,42 @@ function PostForm ()
 
   return (
     <Segment className="quill-editor fluid ui raised very padded">
-      <Form>
+      
+        <Form>
         <Form.Field>
-          <QuillEditor
-            placeholder="Hello World!"
-            name="body"
-            onEditorChange={onChange}
-            value={values.body}
-            error={ error ? true : false }
-            onClear={clear}
-          />
+          
+          <div className="field">
+            <label className="label">Topic:</label>
+                      <input
+                        type="text"
+                        placeholder="Input Your Topic Here"
+                        name="tag"
+                        value={values.tag}
+                        onChange={ onChange }
+                        error={ error ? true : false }
+                    
+                      
+                      />                  
+          </div>
+
+                   
+  
+          <div className="field">
+          <label className="label">Question:</label>
+                  <textarea
+                        type="text"
+                        placeholder="Input Your Question Here"
+                        name="body"
+                        value={values.body}
+                        onChange={ onChange }
+                        error={ error ? true : false }
+            
+            
+                  />
+          </div>
          
         
-      <Button className="submit-button" animated color='pink' onClick={onSubmit}>
+      <Button disabled={values.body.trim() === '' || values.tag.trim() === '' } className="submit-button" animated color='pink' onClick={onSubmit}>
       <Button.Content visible>Submit</Button.Content>
       <Button.Content hidden>
         <Icon name='paper plane' />
@@ -62,6 +86,7 @@ function PostForm ()
                    
         </Form.Field>
       </Form>
+
 
 
       {error && (
@@ -79,10 +104,11 @@ function PostForm ()
 }
 
 const CREATE_POST_MUTATION = gql`
-  mutation createPost($body: String!) {
-    createPost(body: $body) {
+  mutation createPost($body: String!, $tag: String!) {
+    createPost(body: $body, tag:$tag) {
       id
       body
+      tag
       createdAt
       username
       likes {
