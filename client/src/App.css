@@ -6,6 +6,10 @@ body {
   background: #fef6e4;
  }
 
+ ul li {
+   list-style: none;
+ }
+
 .page-title {
  
   text-align: center;
@@ -70,11 +74,12 @@ body {
 
 }
 
-.quill-editor{
+.form-field{
    text-align: center;
-   margin: auto 2rem !important;
-   padding: 2rem !important;
+   
    min-height: 300px;
+   overflow: auto;
+   width: 100%;
    background: teal !important;
   
 
@@ -134,10 +139,22 @@ body {
   overflow: auto;
 
   margin: 1rem;
-  padding: 2rem;
-   
+  padding: 1rem;
+ 
+}
+
+.single-post-page {
+  height: 100px;
+
+  overflow: auto;
+
+  margin: 1rem;
   
-  
+  padding: 1rem;
+}
+
+.segment{
+  margin-left: -25px !important;
 }
 
 .card-content {
@@ -147,14 +164,6 @@ body {
   
 }
 
-.single-post-page {
-  height: 100px;
-  
-  overflow: auto;
- 
-  margin: 1rem;
-  padding: 2rem;
-}
 
 .content-post{
   padding: 1rem;
@@ -196,3 +205,25 @@ body {
   background:#fef6e4 !important;
   border: solid 1px teal!important;
 }
+
+.ais-InstantSearch {
+   margin: 2rem;
+}
+
+
+.ais-SearchBox {
+  margin: 1rem auto;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.hit-body {
+  margin-bottom: 1.5rem;
+}
+
+.hit-body em {
+  background: #f582ae;
+  color: #001858;
+}
+
+

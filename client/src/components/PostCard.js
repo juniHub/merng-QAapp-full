@@ -10,7 +10,7 @@ import MyPopup from '../util/MyPopup';
 
 //import Avatar from 'react-avatar';
 
-import parse from 'html-react-parser';
+//import parse from 'html-react-parser';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -33,7 +33,7 @@ function PostCard({
         <img className="avatar" src={ `https://avatars.dicebear.com/api/human/${ seed }.svg?background=%23222831` } alt="avatar"></img>
         <Card.Header>{username}</Card.Header>
         <Card.Meta >
-          {moment(createdAt).fromNow(true)}
+          {moment(createdAt).fromNow(true)} ago
           </Card.Meta>
         
           <Card.Description>
@@ -41,7 +41,7 @@ function PostCard({
             <a href="#!" className="ui pink ribbon label">{ tag}</a>
             <div className="home-post-page">
              
-                { parse( body ) }
+                {  body  }
              
               </div>
               

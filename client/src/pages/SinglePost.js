@@ -17,7 +17,7 @@ import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import MyPopup from '../util/MyPopup';
 
-import parse from 'html-react-parser';
+//import parse from 'html-react-parser';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -91,7 +91,7 @@ function SinglePost(props) {
               <div class="ui raised segment">
               <a href="#!" className="ui pink ribbon label">{ tag}</a>
                 <div className="single-post-page">
-                { parse( body ) }
+                {  body  }
     
                 </div>
               </div>

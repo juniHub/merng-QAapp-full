@@ -40,11 +40,10 @@ function PostForm ()
   }
 
   return (
-    <Segment className="quill-editor fluid ui raised very padded">
+    <Segment className="form-field fluid ui raised very padded">
       
         <Form>
-        <Form.Field>
-          
+               
           <div className="field">
             <label className="label">Topic:</label>
                       <input
@@ -83,8 +82,6 @@ function PostForm ()
       </Button.Content>
     </Button>
 
-                   
-        </Form.Field>
       </Form>
 
 

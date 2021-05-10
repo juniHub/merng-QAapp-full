@@ -1,10 +1,13 @@
 import React, { useContext} from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Grid, Transition, Button, Header} from 'semantic-ui-react';
+import { Grid, Transition, Button, Header } from 'semantic-ui-react';
+
 
 import { AuthContext } from '../context/auth';
 import PostCard from '../components/PostCard';
 import PostForm from '../components/PostForm';
+import Search from '../components/Search';
+
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 import ShowMore from "@vinspee/react-show-more";
 
@@ -18,9 +21,11 @@ function Home() {
 
 
   return (
- <div className="ui container">
+    <div className="ui container">
+      
+        <Search />
   
-    <Header as='h1' className="page-title">Recent QAs</Header>
+ 
       
       <Grid.Row>
          <Grid columns={1}>
@@ -42,14 +47,18 @@ function Home() {
         ) : (
            
           <Transition.Group >
-           
-            <Grid columns={ 3 } stackable>
+            
+          <Header as='h1' className="page-title">Latest QAs</Header>
+          
             {posts &&
-                <ShowMore items={ posts } by={3}> 
+              <ShowMore items={ posts } by={3}> 
                
              
-                { ( { current, onMore } ) => (
-                  <div>
+              { ( { current, onMore } ) => (
+                
+                
+                <Grid.Row>
+                <Grid columns={ 1 } stackable>
                    
                     {current.map( ( post ) => (
                      
@@ -68,21 +77,22 @@ function Home() {
                     onClick={() => {
                     if (!!onMore) onMore();
                     }}
-                  >
-                  Load More
+                      >
+                      Load More
                     </Button>
 
-                  </div>
-                  
+                    </Grid>
+                    </Grid.Row>
 
 
                   
-               )}   
-              </ShowMore>
+              ) }
+              
+
+                </ShowMore>
                 }
 
-              </Grid>
-          
+           
        
           </Transition.Group>
             
