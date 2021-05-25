@@ -1,3 +1,5 @@
   "proxy": "https://immense-plateau-86294.herokuapp.com/"
+   "proxy": https://juni-ask.herokuapp.com/
 
-  uri: "https://immense-plateau-86294.herokuapp.com/"
+  "uri": "https://immense-plateau-86294.herokuapp.com/"
+   "uri": https://juni-ask.herokuapp.com/

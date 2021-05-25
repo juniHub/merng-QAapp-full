@@ -22,8 +22,15 @@ class Search extends Component {
   render() {
     return (
       <Grid.Row className="ais-InstantSearch">
+ 
         <Header><h2>Search Questions Here</h2></Header>
-            <InstantSearch indexName="QA-app" searchClient={ searchClient }>
+        <div style={ {marginBottom: "2rem"} } class="ais-PoweredBy ais-PoweredBy--light">
+        <a href="https://www.algolia.com/" target="_blank" class="ais-PoweredBy-link" aria-label="Search by Algolia" rel="noopener noreferrer">
+          <img alt="algolia logo" src="https://res.cloudinary.com/hilnmyskv/image/upload/q_auto/v1620810155/Algolia_com_Website_assets/images/shared/algolia_logo/search-by-algolia-light-background.svg"/>
+        </a>
+        </div>
+
+        <InstantSearch indexName="QA-app" searchClient={ searchClient }>
          <Grid columns={ 2 } stackable>
           <Grid.Column>
             <ClearRefinements />
