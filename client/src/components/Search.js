@@ -14,8 +14,8 @@ import PropTypes from 'prop-types';
 
 
 const searchClient = algoliasearch(
-  '2UZGCMHPPF',
-  'c4264e347958a0b318db93771fe73c0f'
+  process.env.REACT_APP_ALGOLIA_API,
+  process.env.REACT_APP_ALGOLIA_KEY
 );
 
 class Search extends Component {
