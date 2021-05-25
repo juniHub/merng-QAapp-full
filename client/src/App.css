@@ -188,6 +188,11 @@ body {
   width: 100%;
 }
 
+.footer a {
+  text-decoration: none;
+  color: hotpink !important;
+}
+
 .extra{
   background: #fef6e4 !important;
   border-left: solid 8px teal !important;
