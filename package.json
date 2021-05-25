@@ -1,7 +1,7 @@
 {
-  "name": "merng",
+  "name": "QAs-App",
   "version": "1.0.0",
-  "description": "QAs app",
+  "description": "QAs app with MERNG stack",
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
