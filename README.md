@@ -80,16 +80,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Juni-storybook-screenshot]()
+![Juni-storybook-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
 
 
 
 ### Built With
 
-* [ReactJS]()
+* [ReactJS](https://reactjs.org/)
 * [MongoDB](https://www.mongodb.com/)
-* [GraphQL]()
-* [ExpressJS]()
+* [GraphQL](https://graphql.org/)
+* [ExpressJS](https://expressjs.com/)
 * [Algolia Search](https://www.algolia.com/)
 
 
