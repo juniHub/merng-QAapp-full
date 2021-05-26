@@ -92,6 +92,8 @@
 * [GraphQL](https://graphql.org/)
 * [ExpressJS](https://expressjs.com/)
 * [Algolia Search](https://www.algolia.com/)
+* [Semantic-UI](https://semantic-ui.com/)
+* [Backend deployed on Heroku and frontend deployed on Netlify](https://id.heroku.com/)
 
 
 
