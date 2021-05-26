@@ -5,6 +5,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/09e91653-d2f5-4352-995d-562ab54ca487/deploy-status)](https://app.netlify.com/sites/juni-ask/deploys)
 
 
 
