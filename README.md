@@ -120,13 +120,24 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
+3. Connect to your mongodb and add info in
 
+   ```sh
+   config/dev.js
+   client/.env
+   ```
+
+4. Run the project locally on [http://localhost:5000](http://localhost:5000)
+
+   ```sh
+   npm run dev
+   ```
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-_For more details, please refer to the [Documentation](https://junitiennguyen.gitbook.io/qa-app)_
+_For more details, please refer to the [Documentation](https://junitiennguyen.gitbook.io/qa-app). This will be continued for update and maintainance._
 
 
 
