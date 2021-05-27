@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Juni-storybook-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
+![Juni-QAs-app-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
 
 
 
