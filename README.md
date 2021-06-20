@@ -76,7 +76,7 @@
 
 ## About The Project
 
-![Juni-storybook-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
+![Juni-QAs-app-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
 
 ### Built With
 
@@ -160,7 +160,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Juni Nguyen - [hellojuninguyen@gmail.com](hellojuninguyen@gmail.com)
+Juni Nguyen - [hello Juni](hellojuninguyen@gmail.com)
 
 Project Link: [https://github.com/juniHub/merng-QAapp-full](https://github.com/juniHub/merng-QAapp-full)
 
