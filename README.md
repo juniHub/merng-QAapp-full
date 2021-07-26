@@ -76,7 +76,7 @@
 
 ## About The Project
 
-![Juni-QAs-app-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1621948621/gallery/xynasd5cgsvhczf3iab5.png)
+![Juni-QAs-app-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1627304395/gallery/i4tp939z3ewpig35jdhn.png)
 
 ### Built With
 
