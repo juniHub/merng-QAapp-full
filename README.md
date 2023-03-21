@@ -36,7 +36,7 @@
     <a href="https://github.com/juniHub/merng-QAapp-full"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://juni-ask.netlify.app/" target="_blank">View Demo</a>
+    <a href="https://juni-qa-app.netlify.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/juniHub/merng-QAapp-full
 /issues">Report Bug</a>
